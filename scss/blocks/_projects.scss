@@ -1,0 +1,31 @@
+/*начало стилей для блока с проектами*/
+
+.projects{
+    margin-bottom: 100px;
+}
+
+.projects .row{
+    row-gap: 24px;
+}
+
+.projects .projects__card img{ /*спросить зачем проджектс кард, если и без него работает*/
+    border-radius: 15px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.projects .projects__card a{
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFA239;
+    text-decoration: none;
+    margin-bottom: 6px;
+    display: inline-block; /*позволяет делать margin, но при этом элемент не занимает все пространство родительского элемента,
+    чтобы увидеть на примере написать display: block и навести курсор на ссылку*/
+}
+
+.projects .projects__card a:hover{
+    text-decoration: underline;
+}
+
+/*конец стилей для блока с проектами*/

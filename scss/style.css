@@ -1,0 +1,515 @@
+@charset "UTF-8";
+/*сброс стилей*/
+/*бляагодаря такой структуре для всех элементов применяется бордер бокс*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*убрали везде margin*/
+body, p, h1, h2, h3, h4, h5, ul {
+  margin: 0;
+}
+
+/*обнуляем стиль списка*/
+ul {
+  list-style: none;
+  padding: 0; /*отступ внутри - padding, отступ снаружи - margin*/
+}
+
+/*сброс стилей закончен*/
+/*настройка основных стилей*/
+:root {
+  --box-shadow: 0 0 35px rgba(12,40,54,0.12); /*создали переменную*/
+  --dark: #0C2836;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px; /*везде будет шрифт размером 16 пикселей*/
+  line-height: 1.5; /*расстояние между строками*/
+  color: #0C2836;
+}
+
+h2 {
+  font-weight: 800;
+  font-style: 40px;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 32px;
+    margin-bottom: 28px;
+  }
+}
+@media screen and (max-width: 576px) {
+  h2 {
+    font-size: 32px;
+  }
+}
+
+h1 {
+  font-style: 40px;
+  line-height: 120%;
+  font-weight: 800;
+  margin-bottom: 28px;
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 32px;
+  }
+}
+
+/*конец настройки основных стилей*/
+/*стили для навигации*/
+.navigation {
+  padding-top: 35px; /*отступ внутри элемента*/ /*padding-top - отступ от верхнего края  !!!спросить почему не перенесли в wrap*/
+  margin-bottom: 72px;
+}
+@media screen and (max-width: 576px) {
+  .navigation {
+    padding-top: 10px;
+  }
+}
+
+.navigation__wrap {
+  display: flex;
+  justify-content: space-between; /*распологает элементы по сторонам*/
+  /*justify-content отвечает за расположение элементов по горизонтали*/
+}
+
+.navigation__list {
+  display: flex;
+  align-items: center; /*размещает элементы по центру по вертикали*/
+  /*align-items отвечает за расположение элементов по вертикали*/
+  grid-gap: 39px; /*отсуп между элементами*/
+}
+
+.navigation__list-item-link {
+  font-weight: 500; /*устанавливает начертание шрифта.*/
+  color: #0C2836;
+  text-decoration: none; /* не используется декор(в нашем случае убирает подчеркивание*/
+  font-size: 18px;
+}
+
+.navigation__list-item-link:hover { /*hover обозначает эффект при наведении*/
+  text-decoration: underline; /*при наведении будет появляться подчеркивание*/
+}
+
+.navigation__list-item-link-1:hover { /*hover обозначает эффект при наведении*/
+  text-decoration: underline; /*при наведении будет появляться подчеркивание*/
+}
+
+/*конец стилей навигации*/
+.navigation__list-item-link-1 {
+  font-weight: 500; /*устанавливает начертание шрифта.*/
+  color: #0C2836;
+  text-decoration: none; /* не используется декор(в нашем случае убирает подчеркивание*/
+  font-size: 18px;
+}
+@media screen and (max-width: 576px) {
+  .navigation__list-item-link-1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navigation__logo {
+    width: 75px;
+  }
+}
+
+/*стили для главного блока*/
+.promo h1 span {
+  color: #FFA239;
+}
+
+.promo-bg {
+  height: 628px;
+  background: url("./../../public/bg.png") center no-repeat; /*center размещает картинку по центру, а no-repeat исключает ее повторение*/
+  background-size: contain;
+}
+@media screen and (max-width: 991px) {
+  .promo-bg {
+    height: 670px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .promo-bg {
+    background: none;
+    height: auto;
+  }
+}
+
+.promo-bg .promo-bg-md {
+  display: none;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .promo-bg .promo-bg-md {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.promo__list li { /*обращаемся к дочернему элементу promo__list*/
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.promo__list li:first-child { /*убрали последнему элементу li margin bottom*/ }
+@media screen and (max-width: 991px) and (min-width: 769px) {
+  .promo__list li:first-child {
+    padding-top: 300px;
+  }
+}
+
+.promo__list li:last-child { /*убрали последнему элементу li margin bottom*/
+  margin-bottom: 0;
+}
+
+.promo p {
+  margin-bottom: 262px;
+}
+@media screen and (max-width: 991px) {
+  .promo p {
+    margin-bottom: 285px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .promo p {
+    margin-bottom: 20px;
+  }
+}
+
+.promo {
+  margin-bottom: 79px;
+}
+
+.promo h1 {
+  font-size: 48px;
+  line-height: 120%;
+  font-weight: 800;
+  margin-bottom: 28px;
+}
+@media screen and (max-width: 768px) {
+  .promo h1 {
+    font-size: 36px;
+  }
+}
+
+/*конец стилей для главного блока*/
+/*начало стилей для features*/
+.features_container {
+  width: 789px;
+  height: 261px;
+  margin: 0 auto; /* центрирует блок внутри родителя. У блока должна быть указана ширина.*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /*размещает элементы по центру по вертикали*/
+  /*align-items отвечает за расположение элементов по вертикали*/
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 991px) {
+  .features_container {
+    height: 460px;
+    flex-direction: column;
+    margin-bottom: 60px;
+    width: 100%;
+  }
+}
+
+.rectangle1 {
+  width: 246px;
+  height: 224px;
+  margin-right: 42px;
+}
+@media screen and (max-width: 991px) {
+  .rectangle1 {
+    margin-bottom: 40px;
+  }
+}
+
+.features__list li {
+  color: #0C2836;
+  font-size: 32px;
+  text-align: right;
+  padding-bottom: 24px;
+  line-height: 120%; /* line-height устанавливает интервал между строками текст*/
+}
+@media screen and (max-width: 991px) {
+  .features__list li {
+    text-align: center;
+  }
+}
+
+.features__list li:last-child {
+  padding-bottom: 0px;
+}
+
+.features__list li:first-child:hover { /*при наведении на первый элемент списка у него меняется цвет*/
+  color: #FC8602;
+}
+
+.rectangle2 {
+  height: 261px;
+  background: #fff; /* Цвет фона */
+  border-radius: 30px; /* Уголки */
+  box-shadow: 2px 2px 5px 2px rgba(171, 169, 169, 0.5); /*тень вокруг таблички*/
+  /* 1) x-offset, определяет горизонтальное положение тени; 2) y-offset, определяет вертикальное положение тени;
+  3) радиус размытия, который влияет на резкость тени. Чем выше значение, тем менее насыщенные тени, и наоборот;
+  4) четвёртое значение определяет распространение тени.*/
+}
+
+.rectangle2 img {
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-bottom: 25px;
+}
+
+.rectangle2 p {
+  color: #0C2836;
+  font-family: "Montserrat";
+  font-size: 18px;
+  padding-left: 40px;
+}
+
+/*конец стилей для features*/
+/*начало стилей для блока с проектами*/
+.projects {
+  margin-bottom: 100px;
+}
+
+.projects .row {
+  row-gap: 24px;
+}
+
+.projects .projects__card img { /*спросить зачем проджектс кард, если и без него работает*/
+  border-radius: 15px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.projects .projects__card a {
+  font-weight: 600;
+  font-size: 18px;
+  color: #FFA239;
+  text-decoration: none;
+  margin-bottom: 6px;
+  display: inline-block; /*позволяет делать margin, но при этом элемент не занимает все пространство родительского элемента,
+чтобы увидеть на примере написать display: block и навести курсор на ссылку*/
+}
+
+.projects .projects__card a:hover {
+  text-decoration: underline;
+}
+
+/*конец стилей для блока с проектами*/
+/*начало стилей для tech*/
+.tech {
+  margin-bottom: 94px;
+}
+
+.tech .row { /*добавляем стили для row только внутри родителя tech*/
+  row-gap: 24px; /* определяет расстояние (промежуток) между строками в макете сетки.*/
+}
+@media screen and (max-width: 576px) {
+  .tech .row {
+    row-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .tech .row .col-6 {
+    padding: 0 5px;
+  }
+}
+
+.tech__card {
+  display: flex; /* позволяет указать параметры элемента, чтобы он эффективно заполнял доступное пространство.*/
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  text-align: center;
+  padding: 55px 24px 24px;
+  border-radius: 15px; /*закругление углов рамки*/
+  background: #fff;
+  box-shadow: var(--box-shadow); /*создали тень вокруг рамки*/
+}
+@media screen and (max-width: 991px) {
+  .tech__card {
+    padding-top: 44px;
+  }
+}
+
+.tech__card-img-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech__card img {
+  margin-bottom: 18px;
+}
+
+.tech__card-name {
+  font-size: 18px;
+  color: #8A99A8;
+}
+
+/*конец стилей для tech*/
+/*начало стилей для feedback*/
+.feedback {
+  margin-bottom: 100px;
+}
+
+.feedback__text {
+  text-align: right;
+  margin-right: 37px;
+  height: 100%;
+  display: flex; /*эта комбинация выравнивает текст по центру родителя*/
+  flex-direction: column; /*эта комбинация выравнивает текст по центру родителя*/
+  justify-content: center; /*эта комбинация выравнивает текст по центру родителя*/
+}
+@media screen and (max-width: 1199px) {
+  .feedback__text {
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 40px;
+    display: block;
+  }
+}
+
+.feedback__text h2 {
+  margin-bottom: 0px;
+}
+
+.feedback__text p {
+  font-size: 24px;
+  margin-right: 8px;
+}
+@media screen and (max-width: 1199px) {
+  .feedback__text p {
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.form label {
+  display: block;
+}
+
+.form textarea, .form input {
+  display: block;
+  padding: 8px 12px; /*первое значение это падинг сверху и снизу,а второе слева и справа*/
+  border: 1px solid #D9E2Eb;
+  border-radius: 10px;
+  min-height: 40px;
+  overflow: hidden; /*убрали скрол у поля ввода текста*/
+  outline: none; /*убрали фокус при наведении на поле*/
+  width: 100%; /*блоки будут занимать все пространство по ширине*/
+}
+
+.form textarea::-moz-placeholder, .form input::-moz-placeholder { /*меняем цвет подсказки в полях ввода*/
+  color: #8A99A8;
+}
+
+.form textarea::placeholder, .form input::placeholder { /*меняем цвет подсказки в полях ввода*/
+  color: #8A99A8;
+}
+
+.form__group {
+  display: flex;
+  gap: 16px; /*отступ между строками*/
+  margin-bottom: 16px;
+}
+@media screen and (max-width: 576px) {
+  .form__group {
+    flex-direction: column;
+  }
+}
+
+.button-primary {
+  background: linear-gradient(90deg, #FB8501 -0.07%, #FFB703 100%);
+  padding: 9px 60px;
+  border-radius: 10px;
+  border: none;
+  transition: box-shadow 300ms, transform 100ms; /*сделали плавную анимацию уменьшения конпки*/
+}
+@media screen and (max-width: 576px) {
+  .button-primary {
+    width: 100%;
+  }
+}
+
+.button-primary:focus { /*focus отвечает за эффект при нажатии*/
+  transform: scale(0.95); /*уменьшает размер кнопки. scale(1) изначальный размер*/
+}
+
+.button-primary:hover {
+  box-shadow: 0 0 10px 0 #FFB003;
+}
+
+.form {
+  box-shadow: var(--box-shadow);
+  background: white;
+  padding: 24px;
+  border-radius: 15px;
+}
+
+/*конец стилей для feedback*/
+/*начало стилей для footer*/
+.footer__links {
+  text-align: center;
+}
+
+.footer__links-item-link {
+  font-size: 24px;
+  color: var(--dark);
+}
+
+.footer__info {
+  text-align: right;
+}
+@media screen and (max-width: 991px) {
+  .footer__info {
+    text-align: center;
+  }
+}
+
+.footer__copyright {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.footer__top {
+  margin-bottom: 74px;
+}
+
+@media screen and (max-width: 991px) {
+  .footer__top .row {
+    row-gap: 24px;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .footer__top img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/*конец стилей для footer*//*# sourceMappingURL=style.css.map */

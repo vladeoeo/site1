@@ -1,0 +1,70 @@
+/*стили для главного блока*/
+.promo h1 span{
+    color:#FFA239
+}
+
+.promo-bg{
+    height: 628px;
+    background: url("./../../public/bg.png") center no-repeat; /*center размещает картинку по центру, а no-repeat исключает ее повторение*/
+    background-size: contain;
+    @media screen and (max-width:991px){
+        height:670px;
+    }
+    @media screen and (max-width:768px){
+        background: none;
+        height: auto;
+    }
+}
+
+.promo-bg .promo-bg-md{
+    display: none;
+    width:100%;
+    @media screen and (max-width:768px){
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+.promo__list li{ /*обращаемся к дочернему элементу promo__list*/
+    display: flex;
+    align-items: baseline;
+    gap:12px/*отступ между элементами*/;
+    margin-bottom: 12px;
+}
+
+.promo__list li:first-child{/*убрали последнему элементу li margin bottom*/
+    @media screen and (max-width:991px) and (min-width:769px){
+        padding-top: 300px;
+    }
+    
+}
+
+.promo__list li:last-child{/*убрали последнему элементу li margin bottom*/
+    margin-bottom: 0;
+}
+
+.promo p{
+    margin-bottom: 262px;
+    @media screen and (max-width:991px){
+        margin-bottom: 285px;
+    }
+    @media screen and (max-width:991px){
+        margin-bottom: 20px;
+    }
+
+}
+
+.promo{
+    margin-bottom: 79px;
+}
+
+.promo h1{
+    font-size: 48px;
+    line-height: 120%;
+    font-weight: 800;
+    margin-bottom: 28px;
+    @media screen and (max-width:768px){
+        font-size: 36px;
+    }
+}
+/*конец стилей для главного блока*/

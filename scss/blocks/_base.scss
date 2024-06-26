@@ -1,0 +1,61 @@
+/*сброс стилей*/
+
+/*бляагодаря такой структуре для всех элементов применяется бордер бокс*/
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+/*убрали везде margin*/
+body,p,h1,h2,h3,h4,h5,ul{
+    margin: 0;
+}
+
+/*обнуляем стиль списка*/
+ul{
+    list-style: none;
+    padding: 0;/*отступ внутри - padding, отступ снаружи - margin*/   
+}
+
+/*сброс стилей закончен*/
+
+/*настройка основных стилей*/
+:root{
+    --box-shadow: 0 0 35px rgba(12,40,54,0.12); /*создали переменную*/
+    --dark: #0C2836;
+}
+
+body{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 16px;/*везде будет шрифт размером 16 пикселей*/
+    line-height: 1.5;/*расстояние между строками*/
+    color:#0C2836
+}
+
+h2{
+    font-weight: 800;
+    font-style: 40px;
+    margin-bottom: 40px;
+    @media screen and (max-width:768px){
+        font-size: 32px;
+        margin-bottom: 28px;
+    }
+    @media screen and (max-width:576px){
+        font-size: 32px;
+    }
+}
+
+h1{
+    font-style: 40px;
+    line-height: 120%;
+    font-weight: 800;
+    margin-bottom: 28px;
+    @media screen and (max-width:768px){
+        font-size: 36px;
+    }
+    @media screen and (max-width:576px){
+        font-size: 32px;
+    }
+}
+/*конец настройки основных стилей*/
